@@ -1,4 +1,2 @@
 # hackysackers
 SacHacks Repo
-
-Emily!!!
