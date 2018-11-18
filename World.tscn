@@ -97,6 +97,7 @@ _sections_unfolded = [ "Cell" ]
 
 editor/display_folded = true
 position = Vector2( 604.726, 325.09 )
+
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -574,5 +575,3 @@ autostart = true
 [connection signal="body_exited" from="NPCs/PersonArea" to="NPCs/PersonArea" method="_on_PersonArea_body_exited"]
 
 [connection signal="timeout" from="NPCs/PersonArea/CanvasLayer/DiagBox/Timer" to="NPCs/PersonArea/CanvasLayer/DiagBox/Text" method="_on_Timer_timeout"]
-
-
