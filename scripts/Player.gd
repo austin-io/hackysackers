@@ -6,6 +6,9 @@ var dx = 1
 var dy = 1
 
 var stickerPoints = 0
+var coffeePoints = 0
+
+var totalScore = 0
 
 func _ready():
 	pass
