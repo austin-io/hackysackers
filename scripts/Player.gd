@@ -23,15 +23,13 @@ func _process(delta):
 	var stamina = get_tree().get_root().get_node("World").find_node("StaminaBar").value
 	
 	if(Input.is_action_pressed("ui_select")):
-		if stamina >= 0:
+		if stamina >= 10:
 			get_tree().get_root().get_node("World").find_node("StaminaBar").value = stamina - 1
 			dx = 2
 			dy = 2
-		else:
-			if stamina >= 0:
-				get_tree().get_root().get_node("World").find_node("StaminaBar").value = stamina - 1
-				dx = 1
-				dy = 1
+	else:
+			dx = 1
+			dy = 1
 	
 	if(Input.is_action_pressed("ui_right")):
 		motion.x = speed * dx
