@@ -1,0 +1,225 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/Coffee.gd" type="Script" id=1]
+[ext_resource path="res://assets/Starbucks-icon.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Sticker.gd" type="Script" id=3]
+[ext_resource path="res://assets/rocketsticker.png" type="Texture" id=4]
+[ext_resource path="res://assets/hardware.png" type="Texture" id=5]
+[ext_resource path="res://scripts/Bug.gd" type="Script" id=6]
+[ext_resource path="res://scripts/BugArea.gd" type="Script" id=7]
+[ext_resource path="res://assets/Bugs.png" type="Texture" id=8]
+[ext_resource path="res://Sprite.gd" type="Script" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6.50002, 5.4423 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.73708, 6.06408 )
+
+[node name="CollectionSet" type="Node" index="0"]
+
+[node name="Coffee" type="Area2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 582.497, 173.834 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Coffee" index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coffee" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 1 )
+
+[node name="Sticker" type="Area2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 331.831, 174.569 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Sticker" index="0"]
+
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sticker" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 2 )
+
+[node name="Hardware" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 429.808, 173.062 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hardware" index="0"]
+
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hardware" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 2 )
+
+[node name="Bug" type="KinematicBody2D" parent="." index="3"]
+
+position = Vector2( 192.643, 160.434 )
+scale = Vector2( 1.0201, 1.01357 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 6 )
+_sections_unfolded = [ "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BugArea" type="Area2D" parent="Bug" index="0"]
+
+position = Vector2( -770.364, -218.245 )
+scale = Vector2( 0.961349, 0.973575 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Bug/BugArea" index="0"]
+
+position = Vector2( 816.996, 239.943 )
+scale = Vector2( 1.01971, 1.01339 )
+texture = ExtResource( 8 )
+hframes = 2
+region_rect = Rect2( 0, 0, 64, 32 )
+script = ExtResource( 9 )
+_sections_unfolded = [ "Animation", "Region" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bug/BugArea" index="1"]
+
+position = Vector2( 817.336, 238.859 )
+scale = Vector2( 2.46155, 2.69933 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bug" index="1"]
+
+position = Vector2( 13.1828, 13.3731 )
+scale = Vector2( 2.26909, 2.27595 )
+shape = SubResource( 4 )
+
+[node name="BugMessage" type="CanvasLayer" parent="Bug" index="2"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="BugPanel" type="Panel" parent="Bug/BugMessage" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 520.0
+margin_top = 45.0
+margin_right = 665.0
+margin_bottom = 71.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Visibility" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bug/BugMessage/BugPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 140.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "-5% Stamina! Ouch!"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+
+[connection signal="body_entered" from="Coffee" to="Coffee" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Sticker" to="Sticker" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Hardware" to="Hardware" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Bug/BugArea" to="Bug/BugArea" method="_on_BugArea_body_entered"]
+
+

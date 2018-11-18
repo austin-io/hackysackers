@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Coffee.gd" type="Script" id=1]
+[ext_resource path="res://assets/Starbucks-icon.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Sticker.gd" type="Script" id=3]
+[ext_resource path="res://assets/rocketsticker.png" type="Texture" id=4]
+[ext_resource path="res://assets/hardware.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="Collectibles" type="Node"]
+
+[node name="Coffee" type="Area2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 582.497, 173.834 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Coffee" index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coffee" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 1 )
+
+[node name="Sticker" type="Area2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 331.831, 174.569 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Sticker" index="0"]
+
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sticker" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 2 )
+
+[node name="Hardware" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 429.808, 173.062 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hardware" index="0"]
+
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hardware" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Coffee" to="Coffee" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Sticker" to="Sticker" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Hardware" to="Hardware" method="_on_Sticker_body_entered"]
+
+
