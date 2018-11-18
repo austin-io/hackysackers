@@ -12,3 +12,4 @@ func _on_PersonArea_body_entered(body):
 func _on_PersonArea_body_exited(body):
 	if body.get_name() == "Player":
 		get_node("CanvasLayer/Panel").hide()
+

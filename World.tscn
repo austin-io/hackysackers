@@ -96,6 +96,7 @@ extents = Vector2( 10, 11.2491 )
 
 [node name="World" type="Node" index="0"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Pause" ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
@@ -125,6 +126,7 @@ _sections_unfolded = [ "Cell" ]
 editor/display_folded = true
 position = Vector2( 512, 288 )
 z_index = 2
+
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -632,7 +634,6 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Collectibles" type="Node" parent="." index="3"]
-
 [node name="CoffeeNodes" type="Node" parent="Collectibles" index="0"]
 
 [node name="Coffee" type="Area2D" parent="Collectibles/CoffeeNodes" index="0"]
@@ -2058,5 +2059,4 @@ shape = SubResource( 11 )
 [connection signal="body_entered" from="Computer" to="Computer" method="_on_Computer_body_entered"]
 
 [connection signal="body_exited" from="Computer" to="Computer" method="_on_Computer_body_exited"]
-
 
