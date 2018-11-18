@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/dialogs/DiagBox.gd" type="Script" id=1]
+[ext_resource path="res://scripts/dialogs/Diag_05_StickerFound.gd" type="Script" id=2]
+
+[node name="DiagBox" type="Polygon2D" index="0"]
+
+position = Vector2( 16, 432 )
+scale = Vector2( 1.02681, 0.691967 )
+polygon = PoolVector2Array( 12.6866, -1.98004, 12.6866, 206.122, 480.154, 206.122, 947.621, 206.122, 947.621, -1.98004 )
+uv = PoolVector2Array(  )
+color = Color( 0.109375, 0.106812, 0.106812, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Text2" type="RichTextLabel" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 46.0
+margin_right = 628.0
+margin_bottom = 107.0
+rect_scale = Vector2( 1.5, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "This is a dialog box.  Welcome, Hacker."
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "This is a dialog box.  Welcome, Hacker."
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+script = ExtResource( 2 )
+_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Pause", "Rect", "Size Flags", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Timer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = true
+
+
