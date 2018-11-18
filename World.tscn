@@ -145,8 +145,8 @@ script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PersonArea" index="0"]
 
-position = Vector2( -0.343456, 1.4176 )
-scale = Vector2( 4.46117, 4.36281 )
+position = Vector2( -1.73739, 0.027751 )
+scale = Vector2( 4.86867, 4.59806 )
 shape = SubResource( 3 )
 
 [node name="Person" type="StaticBody2D" parent="PersonArea" index="1"]
