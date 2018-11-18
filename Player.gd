@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var motion = Vector2()
-var speed = 300
+var speed = 400
 var dx = 1
 var dy = 1
 
@@ -11,8 +11,8 @@ func _ready():
 func _process(delta):
 	
 	if(Input.is_action_pressed("ui_select")):
-		dx = 4
-		dy = 4
+		dx = 3
+		dy = 3
 	else:
 		dx = 1
 		dy = 1
