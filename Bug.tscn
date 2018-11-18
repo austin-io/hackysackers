@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Bug.gd" type="Script" id=1]
+[ext_resource path="res://scripts/BugArea.gd" type="Script" id=2]
+[ext_resource path="res://assets/temp-icon.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Bug" type="KinematicBody2D"]
+
+editor/display_folded = true
+position = Vector2( 1309.07, -126.569 )
+scale = Vector2( 1.0402, 1.02714 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BugArea" type="Area2D" parent="." index="0"]
+
+position = Vector2( -770.364, -218.245 )
+scale = Vector2( 0.961349, 0.973575 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="BugArea" index="0"]
+
+position = Vector2( 801.23, 223.644 )
+scale = Vector2( 1.01531, 1.01531 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BugArea" index="1"]
+
+position = Vector2( 801.653, 224.979 )
+scale = Vector2( 4.14522, 3.92014 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.938976, 0.889154 )
+scale = Vector2( 3.35538, 3.23625 )
+shape = SubResource( 2 )
+
+[node name="BugMessage" type="CanvasLayer" parent="." index="2"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="BugPanel" type="Panel" parent="BugMessage" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 520.0
+margin_top = 45.0
+margin_right = 665.0
+margin_bottom = 71.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Visibility" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BugMessage/BugPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 140.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "-5% Stamina! Ouch!"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+
+[connection signal="body_entered" from="BugArea" to="BugArea" method="_on_BugArea_body_entered"]
+
+
