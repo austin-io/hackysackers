@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rocketsticker.png-7fa7e91fbf587358bde517ebd6d80d0c.stex"
+path="res://.import/Bugs.png-6c4910bb22fa813a832bd3fd3e3412ea.stex"
 
 [deps]
 
-source_file="res://assets/rocketsticker.png"
-dest_files=[ "res://.import/rocketsticker.png-7fa7e91fbf587358bde517ebd6d80d0c.stex" ]
+source_file="res://assets/Bugs.png"
+dest_files=[ "res://.import/Bugs.png-6c4910bb22fa813a832bd3fd3e3412ea.stex" ]
 
 [params]
 
