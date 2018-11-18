@@ -132,8 +132,8 @@ shape = SubResource( 2 )
 
 [node name="PersonArea" type="Area2D" parent="." index="3"]
 
-position = Vector2( 187, 319 )
-scale = Vector2( 2, 1.9375 )
+position = Vector2( 186.583, 320.766 )
+scale = Vector2( 1.98698, 1.9927 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -145,8 +145,8 @@ script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PersonArea" index="0"]
 
-position = Vector2( 0.249999, -1.90735e-006 )
-scale = Vector2( 3.175, 3.25161 )
+position = Vector2( -0.343456, 1.4176 )
+scale = Vector2( 4.46117, 4.36281 )
 shape = SubResource( 3 )
 
 [node name="Person" type="StaticBody2D" parent="PersonArea" index="1"]
