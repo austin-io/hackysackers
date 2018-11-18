@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
@@ -19,6 +20,38 @@
 [ext_resource path="res://assets/hackysac_soundtrack.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/rocketsticker.png" type="Texture" id=18]
 [ext_resource path="res://assets/Starbucks-icon.png" type="Texture" id=19]
+=======
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://MainTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/PlayerIdle/tile000.png" type="Texture" id=4]
+[ext_resource path="res://assets/PlayerIdle/tile001.png" type="Texture" id=5]
+[ext_resource path="res://assets/PlayerIdle/tile002.png" type="Texture" id=6]
+[ext_resource path="res://assets/PlayerIdle/tile003.png" type="Texture" id=7]
+[ext_resource path="res://assets/PlayerWalking/tile000.png" type="Texture" id=8]
+[ext_resource path="res://assets/PlayerWalking/tile001.png" type="Texture" id=9]
+[ext_resource path="res://assets/PlayerWalking/tile002.png" type="Texture" id=10]
+[ext_resource path="res://assets/PlayerWalking/tile003.png" type="Texture" id=11]
+[ext_resource path="res://assets/PlayerWalking/tile004.png" type="Texture" id=12]
+[ext_resource path="res://assets/PlayerWalking/tile005.png" type="Texture" id=13]
+[ext_resource path="res://assets/PlayerWalking/tile006.png" type="Texture" id=14]
+[ext_resource path="res://assets/PlayerWalking/tile007.png" type="Texture" id=15]
+[ext_resource path="res://assets/hackysac_soundtrack.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/rocketsticker.png" type="Texture" id=17]
+[ext_resource path="res://assets/Starbucks-icon.png" type="Texture" id=18]
+[ext_resource path="res://assets/hardware.png" type="Texture" id=19]
+[ext_resource path="res://scripts/Coffee.gd" type="Script" id=20]
+[ext_resource path="res://scripts/Sticker.gd" type="Script" id=21]
+[ext_resource path="res://scripts/PersonArea.gd" type="Script" id=22]
+[ext_resource path="res://assets/temp-icon.png" type="Texture" id=23]
+[ext_resource path="res://scripts/Text.gd" type="Script" id=24]
+[ext_resource path="res://scripts/Bug.gd" type="Script" id=25]
+[ext_resource path="res://scripts/BugArea.gd" type="Script" id=26]
+[ext_resource path="res://scripts/Computer.gd" type="Script" id=27]
+[ext_resource path="res://assets/Computer.png" type="Texture" id=28]
+>>>>>>> 1d0718e15831509bccae591fc780e74416eef773
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -44,6 +77,46 @@ extents = Vector2( 32, 32 )
 
 custom_solver_bias = 0.0
 radius = 10.0
+
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 11.2491 )
 
 [node name="World" type="Node" index="0"]
 
@@ -76,11 +149,18 @@ _sections_unfolded = [ "Cell" ]
 
 editor/display_folded = true
 position = Vector2( 512, 288 )
+z_index = 2
+
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
+<<<<<<< HEAD
 script = ExtResource( 3 )
+=======
+script = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+>>>>>>> 1d0718e15831509bccae591fc780e74416eef773
 __meta__ = {
 "_edit_group_": true
 }
@@ -143,7 +223,137 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
+[node name="Static Elements" type="Node" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="Progress & Stamina" type="CanvasLayer" parent="Static Elements" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Panel" type="Panel" parent="Static Elements/Progress & Stamina" index="0"]
+
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -160.0
+margin_right = -1.0
+margin_bottom = 98.0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin" ]
+
+[node name="StaminaBar" type="ProgressBar" parent="Static Elements/Progress & Stamina/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 29.0
+margin_top = 10.0
+margin_right = 131.0
+margin_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 100.0
+exp_edit = false
+rounded = true
+percent_visible = true
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags", "Theme", "custom_fonts", "custom_styles" ]
+
+[node name="CompletionBar" type="ProgressBar" parent="Static Elements/Progress & Stamina/Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 30.0
+margin_top = 56.0
+margin_right = 131.0
+margin_bottom = 72.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = true
+percent_visible = true
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Percent", "Size Flags", "Theme", "custom_fonts", "custom_styles" ]
+
+[node name="Stamina" type="Label" parent="Static Elements/Progress & Stamina/Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 53.0
+margin_top = 30.0
+margin_right = 104.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Stamina"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Completion" type="Label" parent="Static Elements/Progress & Stamina/Panel" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 77.0
+margin_right = 118.0
+margin_bottom = 91.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Completion"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tokens" type="CanvasLayer" parent="Static Elements" index="1"]
 
 editor/display_folded = true
 layer = 1
@@ -153,7 +363,7 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="Panel" type="Panel" parent="CanvasLayer" index="0"]
+[node name="Panel" type="Panel" parent="Static Elements/Tokens" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -170,7 +380,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_styles" ]
 
-[node name="Label" type="Label" parent="CanvasLayer" index="1"]
+[node name="Label" type="Label" parent="Static Elements/Tokens" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -193,7 +403,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="StickersTitle" type="Label" parent="CanvasLayer" index="2"]
+[node name="StickersTitle" type="Label" parent="Static Elements/Tokens" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -215,7 +425,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CoffeeTitle" type="Label" parent="CanvasLayer" index="3"]
+[node name="CoffeeTitle" type="Label" parent="Static Elements/Tokens" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -237,7 +447,29 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="StickersVal" type="Label" parent="CanvasLayer" index="4"]
+[node name="HardwareTitle" type="Label" parent="Static Elements/Tokens" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 46.0
+margin_top = 117.0
+margin_right = 103.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Hardware"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect" ]
+
+[node name="StickersVal" type="Label" parent="Static Elements/Tokens" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -260,7 +492,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CoffeeVal" type="Label" parent="CanvasLayer" index="5"]
+[node name="CoffeeVal" type="Label" parent="Static Elements/Tokens" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -283,7 +515,30 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="StickerLabel" type="Area2D" parent="CanvasLayer" index="6"]
+[node name="HardwareVal" type="Label" parent="Static Elements/Tokens" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 114.0
+margin_top = 117.0
+margin_right = 171.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "x 0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect" ]
+
+[node name="StickerLabel" type="Area2D" parent="Static Elements/Tokens" index="8"]
 
 editor/display_folded = true
 position = Vector2( 24.0653, 53.0792 )
@@ -300,17 +555,17 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/StickerLabel" index="0"]
+[node name="Sprite" type="Sprite" parent="Static Elements/Tokens/StickerLabel" index="0"]
 
 texture = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StickerLabel" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static Elements/Tokens/StickerLabel" index="1"]
 
 position = Vector2( 0.0872059, -0.204791 )
 scale = Vector2( 1.62194, 1.62194 )
 shape = SubResource( 3 )
 
-[node name="CoffeeLabel" type="Area2D" parent="CanvasLayer" index="7"]
+[node name="CoffeeLabel" type="Area2D" parent="Static Elements/Tokens" index="9"]
 
 editor/display_folded = true
 position = Vector2( 23.3302, 87.6284 )
@@ -327,17 +582,43 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/CoffeeLabel" index="0"]
+[node name="Sprite" type="Sprite" parent="Static Elements/Tokens/CoffeeLabel" index="0"]
 
 texture = ExtResource( 19 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CoffeeLabel" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static Elements/Tokens/CoffeeLabel" index="1"]
 
 position = Vector2( 0.0872059, -0.204791 )
 scale = Vector2( 1.62194, 1.62194 )
 shape = SubResource( 3 )
 
-[node name="TotalScore" type="Label" parent="CanvasLayer" index="8"]
+[node name="HardwareLabel" type="Area2D" parent="Static Elements/Tokens" index="10"]
+
+position = Vector2( 23.568, 124.491 )
+scale = Vector2( 0.746437, 0.746437 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Static Elements/Tokens/HardwareLabel" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static Elements/Tokens/HardwareLabel" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 3 )
+
+[node name="TotalScore" type="Label" parent="Static Elements/Tokens" index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -358,7 +639,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ScoreCount" type="Label" parent="CanvasLayer" index="9"]
+[node name="ScoreCount" type="Label" parent="Static Elements/Tokens" index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -381,7 +662,1429 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Collectibles" type="Node" parent="." index="3"]
+[node name="CoffeeNodes" type="Node" parent="Collectibles" index="0"]
+
+[node name="Coffee" type="Area2D" parent="Collectibles/CoffeeNodes" index="0"]
+
+editor/display_folded = true
+position = Vector2( 696.765, 113.242 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee2" type="Area2D" parent="Collectibles/CoffeeNodes" index="1"]
+
+editor/display_folded = true
+position = Vector2( 1619.3, 56.3811 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee2" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee2" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee3" type="Area2D" parent="Collectibles/CoffeeNodes" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2079.83, -141.433 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee3" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee3" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee4" type="Area2D" parent="Collectibles/CoffeeNodes" index="3"]
+
+editor/display_folded = true
+position = Vector2( -646.297, 312.922 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee4" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee4" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee5" type="Area2D" parent="Collectibles/CoffeeNodes" index="4"]
+
+editor/display_folded = true
+position = Vector2( -949.201, -231.068 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee5" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee5" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee16" type="Area2D" parent="Collectibles/CoffeeNodes" index="5"]
+
+editor/display_folded = true
+position = Vector2( 2669.56, -1294.5 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee16" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee16" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee17" type="Area2D" parent="Collectibles/CoffeeNodes" index="6"]
+
+editor/display_folded = true
+position = Vector2( 413.643, -979.6 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee17" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee17" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee6" type="Area2D" parent="Collectibles/CoffeeNodes" index="7"]
+
+editor/display_folded = true
+position = Vector2( -1357.02, -396.261 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee6" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee6" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee7" type="Area2D" parent="Collectibles/CoffeeNodes" index="8"]
+
+editor/display_folded = true
+position = Vector2( -360.7, -1175.77 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee7" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee7" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee8" type="Area2D" parent="Collectibles/CoffeeNodes" index="9"]
+
+editor/display_folded = true
+position = Vector2( 1061.7, -1472.83 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee8" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee8" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee9" type="Area2D" parent="Collectibles/CoffeeNodes" index="10"]
+
+editor/display_folded = true
+position = Vector2( 3195.5, -904.44 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee9" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee9" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee10" type="Area2D" parent="Collectibles/CoffeeNodes" index="11"]
+
+editor/display_folded = true
+position = Vector2( 3926.96, -573.654 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee10" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee10" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee11" type="Area2D" parent="Collectibles/CoffeeNodes" index="12"]
+
+editor/display_folded = true
+position = Vector2( 3861.73, -1528.74 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee11" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee11" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee12" type="Area2D" parent="Collectibles/CoffeeNodes" index="13"]
+
+editor/display_folded = true
+position = Vector2( 3498.34, -2167.02 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee12" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee12" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee13" type="Area2D" parent="Collectibles/CoffeeNodes" index="14"]
+
+editor/display_folded = true
+position = Vector2( 2459.39, -1980.66 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee13" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee13" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee14" type="Area2D" parent="Collectibles/CoffeeNodes" index="15"]
+
+editor/display_folded = true
+position = Vector2( 1033.74, -2176.34 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee14" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee14" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="Coffee15" type="Area2D" parent="Collectibles/CoffeeNodes" index="16"]
+
+editor/display_folded = true
+position = Vector2( -676.096, -1868.85 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/CoffeeNodes/Coffee15" index="0"]
+
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/CoffeeNodes/Coffee15" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 4 )
+
+[node name="StickerNodes" type="Node" parent="Collectibles" index="1"]
+
+editor/display_folded = true
+
+[node name="Sticker" type="Area2D" parent="Collectibles/StickerNodes" index="0"]
+
+editor/display_folded = true
+position = Vector2( 306.346, 120.276 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker2" type="Area2D" parent="Collectibles/StickerNodes" index="1"]
+
+editor/display_folded = true
+position = Vector2( -912.132, 550.771 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker2" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker2" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker3" type="Area2D" parent="Collectibles/StickerNodes" index="2"]
+
+editor/display_folded = true
+position = Vector2( 1678.39, -194.414 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker3" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker3" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker4" type="Area2D" parent="Collectibles/StickerNodes" index="3"]
+
+editor/display_folded = true
+position = Vector2( 2447.12, 276.141 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker4" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker4" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker5" type="Area2D" parent="Collectibles/StickerNodes" index="4"]
+
+editor/display_folded = true
+position = Vector2( 2153.61, -1256.66 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker5" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker5" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker6" type="Area2D" parent="Collectibles/StickerNodes" index="5"]
+
+editor/display_folded = true
+position = Vector2( 989.188, -955.278 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker6" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker6" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker7" type="Area2D" parent="Collectibles/StickerNodes" index="6"]
+
+editor/display_folded = true
+position = Vector2( 2927.61, -640.2 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker7" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker7" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker8" type="Area2D" parent="Collectibles/StickerNodes" index="7"]
+
+editor/display_folded = true
+position = Vector2( 3622.83, -1897.09 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker8" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker8" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker9" type="Area2D" parent="Collectibles/StickerNodes" index="8"]
+
+editor/display_folded = true
+position = Vector2( 1157, -1965.58 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker9" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker9" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker10" type="Area2D" parent="Collectibles/StickerNodes" index="9"]
+
+editor/display_folded = true
+position = Vector2( -425.241, -2177.92 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker10" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker10" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker11" type="Area2D" parent="Collectibles/StickerNodes" index="10"]
+
+editor/display_folded = true
+position = Vector2( -1712.95, -962.128 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker11" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker11" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Sticker12" type="Area2D" parent="Collectibles/StickerNodes" index="11"]
+
+editor/display_folded = true
+position = Vector2( -647.851, -636.775 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/StickerNodes/Sticker12" index="0"]
+
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/StickerNodes/Sticker12" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="HardwareNodes" type="Node" parent="Collectibles" index="2"]
+
+editor/display_folded = true
+
+[node name="Hardware" type="Area2D" parent="Collectibles/HardwareNodes" index="0"]
+
+editor/display_folded = true
+position = Vector2( 697.036, 318.367 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware2" type="Area2D" parent="Collectibles/HardwareNodes" index="1"]
+
+editor/display_folded = true
+position = Vector2( -802.78, -19.0078 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware2" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware2" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware3" type="Area2D" parent="Collectibles/HardwareNodes" index="2"]
+
+editor/display_folded = true
+position = Vector2( -1755.26, -459.199 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware3" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware3" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware4" type="Area2D" parent="Collectibles/HardwareNodes" index="3"]
+
+editor/display_folded = true
+position = Vector2( 9.29773, -1457.22 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware4" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware4" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware5" type="Area2D" parent="Collectibles/HardwareNodes" index="4"]
+
+editor/display_folded = true
+position = Vector2( 1424.74, -1214.36 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware5" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware5" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware6" type="Area2D" parent="Collectibles/HardwareNodes" index="5"]
+
+editor/display_folded = true
+position = Vector2( 77.6034, -929.749 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware6" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware6" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware7" type="Area2D" parent="Collectibles/HardwareNodes" index="6"]
+
+editor/display_folded = true
+position = Vector2( 2673.22, -914.57 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware7" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware7" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware8" type="Area2D" parent="Collectibles/HardwareNodes" index="7"]
+
+editor/display_folded = true
+position = Vector2( 3909.2, -1139.29 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware8" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware8" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware9" type="Area2D" parent="Collectibles/HardwareNodes" index="8"]
+
+editor/display_folded = true
+position = Vector2( 2897.94, -2122.46 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware9" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware9" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware10" type="Area2D" parent="Collectibles/HardwareNodes" index="9"]
+
+editor/display_folded = true
+position = Vector2( 1528.3, -2183.83 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware10" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware10" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="Hardware11" type="Area2D" parent="Collectibles/HardwareNodes" index="10"]
+
+editor/display_folded = true
+position = Vector2( 33.1301, -1994.15 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Collectibles/HardwareNodes/Hardware11" index="0"]
+
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/HardwareNodes/Hardware11" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
 
 [node name="NPCs" type="Node" parent="." index="4"]
 
+editor/display_folded = true
+
+[node name="PersonArea" type="Area2D" parent="NPCs" index="0"]
+
+position = Vector2( 356.583, 320.766 )
+scale = Vector2( 1.98698, 1.9927 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 0.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 22 )
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PersonArea" index="0"]
+
+position = Vector2( -1.73739, 0.027751 )
+scale = Vector2( 4.86867, 4.59806 )
+shape = SubResource( 6 )
+
+[node name="Person" type="StaticBody2D" parent="NPCs/PersonArea" index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="NPCs/PersonArea/Person" index="0"]
+
+position = Vector2( -1.75, 0 )
+scale = Vector2( 0.492188, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PersonArea/Person" index="1"]
+
+position = Vector2( -2, -0.516125 )
+scale = Vector2( 1.53846, 1.58809 )
+shape = SubResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="NPCs/PersonArea" index="2"]
+
+editor/display_folded = true
+layer = 0
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Panel" type="Panel" parent="NPCs/PersonArea/CanvasLayer" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 113.0
+margin_top = -100.0
+margin_right = 822.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin", "Visibility" ]
+
+[node name="DiagBox" type="Polygon2D" parent="NPCs/PersonArea/CanvasLayer/Panel" index="0"]
+
+editor/display_folded = true
+position = Vector2( -8.21512, 1.17567 )
+scale = Vector2( 0.754741, 0.595143 )
+polygon = PoolVector2Array( 12.6866, -1.98004, 12.6866, 206.122, 480.154, 206.122, 947.621, 206.122, 947.621, -1.98004 )
+uv = PoolVector2Array(  )
+color = Color( 0.109375, 0.106812, 0.106812, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Invert", "Material", "Texture", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Text" type="RichTextLabel" parent="NPCs/PersonArea/CanvasLayer/Panel/DiagBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 46.0
+margin_right = 628.0
+margin_bottom = 107.0
+rect_scale = Vector2( 1.5, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "This is a dialog box.  Welcome, Hacker."
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "This is a dialog box.  Welcome, Hacker."
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = true
+script = ExtResource( 24 )
+_sections_unfolded = [ "BBCode" ]
+
+[node name="Timer" type="Timer" parent="NPCs/PersonArea/CanvasLayer/Panel/DiagBox" index="1"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = false
+
+[node name="Bug" type="KinematicBody2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 1309.07, -126.569 )
+scale = Vector2( 1.0402, 1.02714 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 25 )
+_sections_unfolded = [ "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BugArea" type="Area2D" parent="Bug" index="0"]
+
+position = Vector2( -770.364, -218.245 )
+scale = Vector2( 0.961349, 0.973575 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 26 )
+
+[node name="Sprite" type="Sprite" parent="Bug/BugArea" index="0"]
+
+position = Vector2( 801.23, 223.644 )
+scale = Vector2( 1.01531, 1.01531 )
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bug/BugArea" index="1"]
+
+position = Vector2( 801.653, 224.979 )
+scale = Vector2( 4.14522, 3.92014 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bug" index="1"]
+
+position = Vector2( -0.938976, 0.889154 )
+scale = Vector2( 3.35538, 3.23625 )
+shape = SubResource( 9 )
+
+[node name="BugMessage" type="CanvasLayer" parent="Bug" index="2"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="BugPanel" type="Panel" parent="Bug/BugMessage" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 520.0
+margin_top = 45.0
+margin_right = 665.0
+margin_bottom = 71.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Visibility" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bug/BugMessage/BugPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 140.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "-5% Stamina! Ouch!"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+
+[node name="Computer" type="Area2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 508.041, -1595.59 )
+scale = Vector2( 2.12463, 1.99844 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 27 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Computer" index="0"]
+
+position = Vector2( 0.842434, -1.60836 )
+scale = Vector2( 1.90301, 1.9591 )
+texture = ExtResource( 28 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Computer" index="1"]
+
+position = Vector2( 1.58376, -1.90635 )
+scale = Vector2( 0.965597, 0.973545 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/StaticBody2D" index="0"]
+
+position = Vector2( 0.925331, -14.2709 )
+scale = Vector2( 2.34434, 1.54481 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer" index="2"]
+
+position = Vector2( 1.9471, -0.710504 )
+scale = Vector2( 2.82929, 2.70816 )
+shape = SubResource( 11 )
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee" to="Collectibles/CoffeeNodes/Coffee" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee2" to="Collectibles/CoffeeNodes/Coffee2" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee3" to="Collectibles/CoffeeNodes/Coffee3" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee4" to="Collectibles/CoffeeNodes/Coffee4" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee5" to="Collectibles/CoffeeNodes/Coffee5" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee16" to="Collectibles/CoffeeNodes/Coffee16" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee17" to="Collectibles/CoffeeNodes/Coffee17" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee6" to="Collectibles/CoffeeNodes/Coffee6" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee7" to="Collectibles/CoffeeNodes/Coffee7" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee8" to="Collectibles/CoffeeNodes/Coffee8" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee9" to="Collectibles/CoffeeNodes/Coffee9" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee10" to="Collectibles/CoffeeNodes/Coffee10" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee11" to="Collectibles/CoffeeNodes/Coffee11" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee12" to="Collectibles/CoffeeNodes/Coffee12" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee13" to="Collectibles/CoffeeNodes/Coffee13" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee14" to="Collectibles/CoffeeNodes/Coffee14" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/CoffeeNodes/Coffee15" to="Collectibles/CoffeeNodes/Coffee15" method="_on_Coffee_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker" to="Collectibles/StickerNodes/Sticker" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker2" to="Collectibles/StickerNodes/Sticker2" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker3" to="Collectibles/StickerNodes/Sticker3" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker4" to="Collectibles/StickerNodes/Sticker4" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker5" to="Collectibles/StickerNodes/Sticker5" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker6" to="Collectibles/StickerNodes/Sticker6" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker7" to="Collectibles/StickerNodes/Sticker7" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker8" to="Collectibles/StickerNodes/Sticker8" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker9" to="Collectibles/StickerNodes/Sticker9" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker10" to="Collectibles/StickerNodes/Sticker10" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker11" to="Collectibles/StickerNodes/Sticker11" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/StickerNodes/Sticker12" to="Collectibles/StickerNodes/Sticker12" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware" to="Collectibles/HardwareNodes/Hardware" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware2" to="Collectibles/HardwareNodes/Hardware2" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware3" to="Collectibles/HardwareNodes/Hardware3" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware4" to="Collectibles/HardwareNodes/Hardware4" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware5" to="Collectibles/HardwareNodes/Hardware5" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware6" to="Collectibles/HardwareNodes/Hardware6" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware7" to="Collectibles/HardwareNodes/Hardware7" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware8" to="Collectibles/HardwareNodes/Hardware8" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware9" to="Collectibles/HardwareNodes/Hardware9" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware10" to="Collectibles/HardwareNodes/Hardware10" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="Collectibles/HardwareNodes/Hardware11" to="Collectibles/HardwareNodes/Hardware11" method="_on_Sticker_body_entered"]
+
+[connection signal="body_entered" from="NPCs/PersonArea" to="NPCs/PersonArea" method="_on_PersonArea_body_entered"]
+
+[connection signal="body_exited" from="NPCs/PersonArea" to="NPCs/PersonArea" method="_on_PersonArea_body_exited"]
+
+[connection signal="timeout" from="NPCs/PersonArea/CanvasLayer/Panel/DiagBox/Timer" to="NPCs/PersonArea/CanvasLayer/Panel/DiagBox/Text" method="_on_Timer_timeout"]
+
+[connection signal="body_entered" from="Bug/BugArea" to="Bug/BugArea" method="_on_BugArea_body_entered"]
+
+[connection signal="body_entered" from="Computer" to="Computer" method="_on_Computer_body_entered"]
+
+[connection signal="body_exited" from="Computer" to="Computer" method="_on_Computer_body_exited"]
 

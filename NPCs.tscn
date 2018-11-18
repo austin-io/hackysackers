@@ -1,0 +1,157 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/PersonArea.gd" type="Script" id=1]
+[ext_resource path="res://assets/temp-icon.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Text.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="NPCs" type="Node"]
+
+editor/display_folded = true
+
+[node name="PersonArea" type="Area2D" parent="." index="0"]
+
+position = Vector2( 356.583, 320.766 )
+scale = Vector2( 1.98698, 1.9927 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 0.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PersonArea" index="0"]
+
+position = Vector2( -1.73739, 0.027751 )
+scale = Vector2( 4.86867, 4.59806 )
+shape = SubResource( 1 )
+
+[node name="Person" type="StaticBody2D" parent="PersonArea" index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="PersonArea/Person" index="0"]
+
+position = Vector2( -1.75, 0 )
+scale = Vector2( 0.492188, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PersonArea/Person" index="1"]
+
+position = Vector2( -2, -0.516125 )
+scale = Vector2( 1.53846, 1.58809 )
+shape = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PersonArea" index="2"]
+
+layer = 0
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Panel" type="Panel" parent="PersonArea/CanvasLayer" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 113.0
+margin_top = -100.0
+margin_right = 822.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin", "Visibility" ]
+
+[node name="DiagBox" type="Polygon2D" parent="PersonArea/CanvasLayer/Panel" index="0"]
+
+position = Vector2( -5.07455, 6.11009 )
+scale = Vector2( 0.743661, 0.571204 )
+polygon = PoolVector2Array( 12.6866, -1.98004, 12.6866, 206.122, 480.154, 206.122, 947.621, 206.122, 947.621, -1.98004 )
+uv = PoolVector2Array(  )
+color = Color( 0.109375, 0.106812, 0.106812, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Invert", "Material", "Texture", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Text" type="RichTextLabel" parent="PersonArea/CanvasLayer/Panel/DiagBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 46.0
+margin_right = 628.0
+margin_bottom = 107.0
+rect_scale = Vector2( 1.5, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+bbcode_text = "This is a dialog box.  Welcome, Hacker."
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "This is a dialog box.  Welcome, Hacker."
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = true
+script = ExtResource( 3 )
+_sections_unfolded = [ "BBCode" ]
+
+[node name="Timer" type="Timer" parent="PersonArea/CanvasLayer/Panel/DiagBox" index="1"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = false
+
+[connection signal="body_entered" from="PersonArea" to="PersonArea" method="_on_PersonArea_body_entered"]
+
+[connection signal="body_exited" from="PersonArea" to="PersonArea" method="_on_PersonArea_body_exited"]
+
+[connection signal="timeout" from="PersonArea/CanvasLayer/Panel/DiagBox/Timer" to="PersonArea/CanvasLayer/Panel/DiagBox/Text" method="_on_Timer_timeout"]
+
+
