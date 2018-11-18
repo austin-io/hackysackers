@@ -1,53 +1,79 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://MainTileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/rocketsticker.png" type="Texture" id=2]
-[ext_resource path="res://assets/Starbucks-icon.png" type="Texture" id=3]
-[ext_resource path="res://scripts/Player.gd" type="Script" id=4]
-[ext_resource path="res://assets/icon.png" type="Texture" id=5]
-[ext_resource path="res://scripts/Sticker.gd" type="Script" id=6]
-[ext_resource path="res://Coffee.gd" type="Script" id=7]
-[ext_resource path="res://scripts/PersonArea.gd" type="Script" id=8]
-[ext_resource path="res://assets/temp-icon.png" type="Texture" id=9]
-[ext_resource path="res://scripts/Dialogs/DialogBox.gd" type="Script" id=10]
-[ext_resource path="res://scripts/BugArea.gd" type="Script" id=11]
-[ext_resource path="res://scripts/Bug.gd" type="Script" id=12]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/PlayerIdle/tile000.png" type="Texture" id=4]
+[ext_resource path="res://assets/PlayerIdle/tile001.png" type="Texture" id=5]
+[ext_resource path="res://assets/PlayerIdle/tile002.png" type="Texture" id=6]
+[ext_resource path="res://assets/PlayerIdle/tile003.png" type="Texture" id=7]
+[ext_resource path="res://assets/PlayerWalking/tile000.png" type="Texture" id=8]
+[ext_resource path="res://assets/PlayerWalking/tile001.png" type="Texture" id=9]
+[ext_resource path="res://assets/PlayerWalking/tile002.png" type="Texture" id=10]
+[ext_resource path="res://assets/PlayerWalking/tile003.png" type="Texture" id=11]
+[ext_resource path="res://assets/PlayerWalking/tile004.png" type="Texture" id=12]
+[ext_resource path="res://assets/PlayerWalking/tile005.png" type="Texture" id=13]
+[ext_resource path="res://assets/PlayerWalking/tile006.png" type="Texture" id=14]
+[ext_resource path="res://assets/PlayerWalking/tile007.png" type="Texture" id=15]
+[ext_resource path="res://assets/rocketsticker.png" type="Texture" id=16]
+[ext_resource path="res://assets/Starbucks-icon.png" type="Texture" id=17]
+[ext_resource path="res://scripts/Coffee.gd" type="Script" id=18]
+[ext_resource path="res://scripts/Sticker.gd" type="Script" id=19]
+[ext_resource path="res://scripts/PersonArea.gd" type="Script" id=20]
+[ext_resource path="res://assets/temp-icon.png" type="Texture" id=21]
+[ext_resource path="res://scripts/Text.gd" type="Script" id=22]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
 
-custom_solver_bias = 0.0
-radius = 10.0
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "walking",
+"speed": 10.0
+} ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+radius = 10.0
 
-[sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+radius = 10.0
+
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 10.0
 
 [sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
 [node name="World" type="Node" index="0"]
+
+_sections_unfolded = [ "Pause" ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
-position = Vector2( -297.517, 0 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 64, 64 )
@@ -64,10 +90,70 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -262125, 4, 0, -262124, 536870915, 0, -262123, 536870916, 0, -196589, 536870913, 0, -196588, 536870912, 0, -196587, 1, 0, -131053, 536870913, 0, -131052, 536870912, 0, -131051, 1, 0, -65517, 536870913, 0, -65516, 536870912, 0, -65515, 1, 0, 5, 0, 0, 6, 0, 0, 19, 536870913, 0, 20, 536870912, 0, 21, 1, 0, 65538, 4, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 3, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 3, 0, 65548, 3, 0, 65549, 3, 0, 65550, 536870916, 0, 65555, 536870913, 0, 65556, 536870912, 0, 65557, 1, 0, 131074, 536870913, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 1, 0, 131091, 536870913, 0, 131092, 536870912, 0, 131093, 1, 0, 196610, 536870913, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 1, 0, 196623, 536870915, 0, 196624, 536870915, 0, 196625, 536870915, 0, 196626, 536870915, 0, 196627, 536870913, 0, 196628, 536870912, 0, 196629, 1, 0, 262146, 536870913, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 536870912, 0, 262159, 536870912, 0, 262160, 536870912, 0, 262161, 536870912, 0, 262162, 536870912, 0, 262163, 536870912, 0, 262164, 536870912, 0, 262165, 1, 0, 327682, 536870913, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 536870912, 0, 327695, 536870912, 0, 327696, 536870912, 0, 327697, 536870912, 0, 327698, 536870912, 0, 327699, 536870912, 0, 327700, 536870912, 0, 327701, 1, 0, 393218, 536870913, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 1, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 393234, 2, 0, 393235, 2, 0, 393236, 2, 0, 393237, 2, 0, 458754, 536870913, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 1, 0, 458767, 2, 0, 524290, 536870914, 0, 524291, 536870914, 0, 524292, 536870914, 0, 524293, 536870914, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0 )
+tile_data = PoolIntArray( -262126, 2, 0, -262125, 4, 0, -262124, 536870915, 0, -262123, 536870916, 0, -262122, 2, 0, -196590, 2, 0, -196589, 536870913, 0, -196588, 536870912, 0, -196587, 1, 0, -196586, 2, 0, -131054, 2, 0, -131053, 536870913, 0, -131052, 536870912, 0, -131051, 1, 0, -131050, 2, 0, -65518, 2, 0, -65517, 536870913, 0, -65516, 536870912, 0, -65515, 1, 0, -65514, 2, 0, 18, 2, 0, 19, 536870913, 0, 20, 536870912, 0, 21, 1, 0, 22, 2, 0, 65537, 2, 0, 65538, 4, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 3, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 3, 0, 65548, 3, 0, 65549, 3, 0, 65550, 536870916, 0, 65551, 2, 0, 65554, 2, 0, 65555, 536870913, 0, 65556, 536870912, 0, 65557, 1, 0, 65558, 2, 0, 131073, 2, 0, 131074, 536870913, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 1, 0, 131087, 2, 0, 131090, 2, 0, 131091, 536870913, 0, 131092, 536870912, 0, 131093, 1, 0, 131094, 2, 0, 196609, 2, 0, 196610, 536870913, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 1, 0, 196623, 536870915, 0, 196624, 536870915, 0, 196625, 536870915, 0, 196626, 536870915, 0, 196627, 536870913, 0, 196628, 536870912, 0, 196629, 1, 0, 196630, 2, 0, 262145, 2, 0, 262146, 536870913, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 536870912, 0, 262159, 536870912, 0, 262160, 536870912, 0, 262161, 536870912, 0, 262162, 536870912, 0, 262163, 536870912, 0, 262164, 536870912, 0, 262165, 1, 0, 262166, 2, 0, 327681, 2, 0, 327682, 536870913, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 536870912, 0, 327695, 536870912, 0, 327696, 536870912, 0, 327697, 536870912, 0, 327698, 536870912, 0, 327699, 536870912, 0, 327700, 536870912, 0, 327701, 1, 0, 327702, 2, 0, 393217, 2, 0, 393218, 536870913, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 1, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 393234, 2, 0, 393235, 2, 0, 393236, 2, 0, 393237, 2, 0, 458753, 2, 0, 458754, 536870913, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 1, 0, 458767, 2, 0, 524290, 536870914, 0, 524291, 536870914, 0, 524292, 536870914, 0, 524293, 536870914, 0, 524294, 536870914, 0, 524295, 536870914, 0, 524296, 536870914, 0, 524297, 536870914, 0, 524298, 536870914, 0, 524299, 536870914, 0, 524300, 536870914, 0, 524301, 536870914, 0, 524302, 2, 0, 524303, 2, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+[node name="Player" type="KinematicBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 604.726, 325.09 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player" index="0"]
+
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0.710938, 0, 1, 0.458549 )
+show_behind_parent = true
+position = Vector2( 0.376172, 25.4543 )
+scale = Vector2( 0.464371, 0.204553 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player" index="1"]
+
+frames = SubResource( 1 )
+animation = "idle"
+frame = 3
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="2"]
+
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="3"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
 
 editor/display_folded = true
 layer = 1
@@ -75,6 +161,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="Panel" type="Panel" parent="CanvasLayer" index="0"]
 
@@ -225,13 +312,13 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/StickerLabel" index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StickerLabel" index="1"]
 
 position = Vector2( 0.0872059, -0.204791 )
 scale = Vector2( 1.62194, 1.62194 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="CoffeeLabel" type="Area2D" parent="CanvasLayer" index="7"]
 
@@ -252,13 +339,13 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/CoffeeLabel" index="0"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CoffeeLabel" index="1"]
 
 position = Vector2( 0.0872059, -0.204791 )
 scale = Vector2( 1.62194, 1.62194 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="TotalScore" type="Label" parent="CanvasLayer" index="8"]
 
@@ -303,110 +390,11 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Player" type="KinematicBody2D" parent="." index="2"]
+[node name="Collectibles" type="Node" parent="." index="3"]
 
 editor/display_folded = true
-position = Vector2( 512, 288 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="PlayerSprite" type="Sprite" parent="Player" index="0"]
-
-position = Vector2( -1.01725e-006, 1.01725e-006 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Offset" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1"]
-
-shape = SubResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
-
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-
-[node name="Sticker" type="Area2D" parent="." index="3"]
-
-editor/display_folded = true
-position = Vector2( 331.831, 174.569 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Sticker" index="0"]
-
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sticker" index="1"]
-
-position = Vector2( 0.0872059, -0.204791 )
-scale = Vector2( 1.62194, 1.62194 )
-shape = SubResource( 1 )
-
-[node name="Sticker2" type="Area2D" parent="." index="4"]
-
-editor/display_folded = true
-position = Vector2( 383.287, 350.255 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Sticker2" index="0"]
-
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sticker2" index="1"]
-
-position = Vector2( 0.0872059, -0.204791 )
-scale = Vector2( 1.62194, 1.62194 )
-shape = SubResource( 1 )
-
-[node name="Coffee" type="Area2D" parent="." index="5"]
+[node name="Coffee" type="Area2D" parent="Collectibles" index="0"]
 
 editor/display_folded = true
 position = Vector2( 582.497, 173.834 )
@@ -417,26 +405,25 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 7 )
+script = ExtResource( 18 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Coffee" index="0"]
+[node name="Sprite" type="Sprite" parent="Collectibles/Coffee" index="0"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 17 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coffee" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/Coffee" index="1"]
 
 position = Vector2( 0.0872059, -0.204791 )
 scale = Vector2( 1.62194, 1.62194 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
-[node name="PersonArea" type="Area2D" parent="." index="6"]
+[node name="Sticker" type="Area2D" parent="Collectibles" index="1"]
 
 editor/display_folded = true
-position = Vector2( 186.583, 320.766 )
-scale = Vector2( 1.98698, 1.9927 )
+position = Vector2( 331.831, 174.569 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -444,15 +431,47 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 8 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PersonArea" index="0"]
+[node name="Sprite" type="Sprite" parent="Collectibles/Sticker" index="0"]
+
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/Sticker" index="1"]
+
+position = Vector2( 0.0872059, -0.204791 )
+scale = Vector2( 1.62194, 1.62194 )
+shape = SubResource( 5 )
+
+[node name="NPCs" type="Node" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="PersonArea" type="Area2D" parent="NPCs" index="0"]
+
+editor/display_folded = true
+position = Vector2( 356.583, 320.766 )
+scale = Vector2( 1.98698, 1.9927 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 0.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 20 )
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PersonArea" index="0"]
 
 position = Vector2( -1.73739, 0.027751 )
 scale = Vector2( 4.86867, 4.59806 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
-[node name="Person" type="StaticBody2D" parent="PersonArea" index="1"]
+[node name="Person" type="StaticBody2D" parent="NPCs/PersonArea" index="1"]
 
 editor/display_folded = true
 input_pickable = false
@@ -463,41 +482,21 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="Sprite" type="Sprite" parent="PersonArea/Person" index="0"]
+[node name="Sprite" type="Sprite" parent="NPCs/PersonArea/Person" index="0"]
 
 position = Vector2( -1.75, 0 )
 scale = Vector2( 0.492188, 0.5 )
-texture = ExtResource( 9 )
+texture = ExtResource( 21 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PersonArea/Person" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/PersonArea/Person" index="1"]
 
 position = Vector2( -2, -0.516125 )
 scale = Vector2( 1.53846, 1.58809 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
-[node name="Message1" type="PopupPanel" parent="PersonArea" index="2"]
+[node name="CanvasLayer" type="CanvasLayer" parent="NPCs/PersonArea" index="2"]
 
 editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-margin_top = -64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
-_sections_unfolded = [ "Anchor", "Margin", "Popup", "Rect", "Visibility", "custom_styles" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CanvasLayer" type="CanvasLayer" parent="PersonArea/Message1" index="0"]
-
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -505,10 +504,10 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="DiagBox" type="Polygon2D" parent="PersonArea/Message1/CanvasLayer" index="0"]
+[node name="DiagBox" type="Polygon2D" parent="NPCs/PersonArea/CanvasLayer" index="0"]
 
 visible = false
-position = Vector2( 10.3747, 430.207 )
+position = Vector2( 10.3747, 830.207 )
 scale = Vector2( 1.04659, 0.70733 )
 polygon = PoolVector2Array( 12.6866, -1.98004, 12.6866, 206.122, 480.154, 206.122, 947.621, 206.122, 947.621, -1.98004 )
 uv = PoolVector2Array(  )
@@ -522,12 +521,12 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Invert", "Material", "Texture", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Text" type="RichTextLabel" parent="PersonArea/Message1/CanvasLayer/DiagBox" index="0"]
+[node name="Text" type="RichTextLabel" parent="NPCs/PersonArea/CanvasLayer/DiagBox" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -555,106 +554,25 @@ text = "This is a dialog box.  Welcome, Hacker."
 scroll_active = true
 scroll_following = false
 selection_enabled = false
-override_selected_font_color = false
-script = ExtResource( 10 )
-_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Pause", "Rect", "Size Flags", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+override_selected_font_color = true
+script = ExtResource( 22 )
+_sections_unfolded = [ "BBCode" ]
 
-[node name="Timer" type="Timer" parent="PersonArea/Message1/CanvasLayer/DiagBox" index="1"]
+[node name="Timer" type="Timer" parent="NPCs/PersonArea/CanvasLayer/DiagBox" index="1"]
 
 process_mode = 1
 wait_time = 0.05
 one_shot = false
 autostart = true
 
-[node name="BugArea" type="Area2D" parent="." index="7"]
+[connection signal="body_entered" from="Collectibles/Coffee" to="Collectibles/Coffee" method="_on_Coffee_body_entered"]
 
-editor/display_folded = true
-position = Vector2( 485.332, 423.292 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_group_": true
-}
+[connection signal="body_entered" from="Collectibles/Sticker" to="Collectibles/Sticker" method="_on_Sticker_body_entered"]
 
-[node name="Bug" type="KinematicBody2D" parent="BugArea" index="0"]
+[connection signal="body_entered" from="NPCs/PersonArea" to="NPCs/PersonArea" method="_on_PersonArea_body_entered"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 12 )
-_sections_unfolded = [ "Visibility" ]
+[connection signal="body_exited" from="NPCs/PersonArea" to="NPCs/PersonArea" method="_on_PersonArea_body_exited"]
 
-[node name="Sprite" type="Sprite" parent="BugArea/Bug" index="0"]
-
-texture = ExtResource( 9 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BugArea/Bug" index="1"]
-
-position = Vector2( 0.0258813, -0.124406 )
-scale = Vector2( 3.185, 3.185 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BugArea" index="1"]
-
-position = Vector2( 0.530739, 1.35388 )
-scale = Vector2( 8.48651, 8.23764 )
-shape = SubResource( 6 )
-
-[node name="PopupDialog" type="PopupDialog" parent="BugArea" index="2"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 84.0
-margin_right = 124.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
-_sections_unfolded = [ "Pause" ]
-
-[node name="Your program had a bug!" type="Label" parent="BugArea/PopupDialog" index="0"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[connection signal="body_entered" from="Sticker" to="Sticker" method="_on_Sticker_body_entered"]
-
-[connection signal="body_entered" from="Sticker2" to="Sticker2" method="_on_Sticker_body_entered"]
-
-[connection signal="body_entered" from="Coffee" to="Coffee" method="_on_Coffee_body_entered"]
-
-[connection signal="body_entered" from="PersonArea" to="PersonArea" method="_on_PersonArea_body_entered"]
-
-[connection signal="body_exited" from="PersonArea" to="PersonArea" method="_on_PersonArea_body_exited"]
-
-[connection signal="timeout" from="PersonArea/Message1/CanvasLayer/DiagBox/Timer" to="PersonArea/Message1/CanvasLayer/DiagBox/Text" method="_on_Timer_timeout"]
+[connection signal="timeout" from="NPCs/PersonArea/CanvasLayer/DiagBox/Timer" to="NPCs/PersonArea/CanvasLayer/DiagBox/Text" method="_on_Timer_timeout"]
 
 

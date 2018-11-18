@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.stex"
+path="res://.import/tile000.png-f79c37b8721e06edc79a5bdb05c000e8.stex"
 
 [deps]
 
-source_file="res://assets/icon.png"
-dest_files=[ "res://.import/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.stex" ]
+source_file="res://assets/PlayerWalking/tile000.png"
+dest_files=[ "res://.import/tile000.png-f79c37b8721e06edc79a5bdb05c000e8.stex" ]
 
 [params]
 
