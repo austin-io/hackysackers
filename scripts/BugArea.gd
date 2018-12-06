@@ -1,7 +1,11 @@
 extends Area2D
 
+var audioPlayer
+
 func _ready():
-	pass
+	audioPlayer = AudioStreamPlayer.new()
+	add_child(audioPlayer)
+	audioPlayer.stream = load("res://assets/Hurt_Sound.wav")
 
 signal timer_end
 
@@ -24,6 +28,7 @@ func _create_timer(object_target, float_wait_time, bool_is_oneshot, string_funct
 
 func _on_BugArea_body_entered(body):
 	if body.get_name() == "Player":
+		audioPlayer.play()
 		var completion = get_tree().get_root().get_node("World").find_node("CompletionBar").get_value()
 		get_tree().get_root().get_node("World").find_node("CompletionBar").set_value(completion - 5)
 		var stamina = get_tree().get_root().get_node("World").find_node("StaminaBar").get_value()

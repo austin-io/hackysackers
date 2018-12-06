@@ -3,6 +3,8 @@ extends KinematicBody2D
 var speed = 100
 var velocity = Vector2()
 
+var audioPlayer
+
 func _ready():
 	velocity.x = speed
 	velocity.y = speed

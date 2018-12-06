@@ -1,10 +1,16 @@
 extends Area2D
 
+var audioPlayer
+
 func _ready():
-	pass
+	audioPlayer = AudioStreamPlayer.new()
+	add_child(audioPlayer)
+	audioPlayer.stream = load("res://assets/Happy_Sound.wav")
 
 func _on_Coffee_body_entered(body):
+	
 	if body.get_name() == "Player":
+		audioPlayer.play()
 		queue_free()
 		body.coffeePoints = body.coffeePoints + 1
 		body.totalScore = body.totalScore + 5
